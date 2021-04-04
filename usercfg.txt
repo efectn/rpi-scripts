@@ -1,0 +1,22 @@
+# Place "config.txt" changes (dtparam, dtoverlay, disable_overscan, etc.) in
+# this file. Please refer to the README file for a description of the various
+# configuration files on the boot partition.
+
+gpu_mem=128
+arm_freq=1425
+core_freq=550
+gpu_freq=550
+v3d_freq=550
+h264_freq=550
+over_voltage=3
+avoid_pwm_pll=1
+force_turbo=1
+sdram_freq=625
+sdram_schmoo=0x02000020
+over_voltage_sdram_p=4
+over_voltage_sdram_i=3
+over_voltage_sdram_c=3
+
+avoid_warnings=1
+
+#dtoverlay=vc4-fkms-v3d
