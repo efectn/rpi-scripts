@@ -11,22 +11,22 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-while True:
-    GPIO.wait_for_edge(button, GPIO.FALLING)
 
-    print("Button pressed")
-    start = time.time()
-    time.sleep(0.2)
+GPIO.wait_for_edge(button, GPIO.FALLING)
 
-    while GPIO.input(button) == GPIO.LOW:
-        time.sleep(0.01)
+print("Button pressed")
+start = time.time()
+time.sleep(0.2)
 
-    signal_length = time.time() - start
-    print("Signal Length: {}\n".format(signal_length))
+while GPIO.input(button) == GPIO.LOW:
+    time.sleep(0.01)
 
-    if signal_length >= shutdown_seconds:
-        system("shutdown -h now")
-    else:
-        system("shutdown -r now")
+signal_length = time.time() - start
+print("Signal Length: {}\n".format(signal_length))
+
+if signal_length >= shutdown_seconds:
+    system("shutdown -h now")
+else:
+    system("shutdown -r now")
 
 

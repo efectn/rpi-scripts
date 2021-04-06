@@ -3,7 +3,7 @@ from time import sleep
 import subprocess
 
 # Varibles (degree: percentage)
-degrees = {35: 20, 45: 40, 55: 50, 75: 100}
+degrees = {35: 20, 45: 40, 55: 50, 70: 100}
 fan_pin = 12
 min_temp = 34
 
